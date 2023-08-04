@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App , {Dennys, Albertos, ChicFilA, DennysJuice} from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<App />} />
+        <Route path="/dennys" element={<Dennys />} />
+        {/* <Route path="/dennys" element={<DennysJuice />} /> */}
+        <Route path="/albertos" element={<Albertos />} />
+        <Route path="/chic-fil-a" element={<ChicFilA />} />
+
+      </Routes>
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 
